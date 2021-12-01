@@ -15,9 +15,7 @@ print(user2.age)
 #function inside class is called a method
 
 
-# # """
-# # self is a reference to the new objcet that is being created 
-# # after self, additional args can be added """
+""" self is a reference to the new objcet that is being created after self, additional args can be added """
 
 
 class Dolls:                              # The init sets the tone
@@ -104,8 +102,6 @@ R1 = Robots("High", "Washi", 202312, "Black", "Hybrid", 2.5)
 R1.N()
 R1.Cali()
 
-
-
 class Humans: 
     def __init__(self, Race, Country, Hair_colour, Body_Type):
         self.Race = Race
@@ -113,19 +109,27 @@ class Humans:
         self.Hair_colour = Hair_colour
         self.Body_Type = Body_Type
         
-    def Race(self):
+    def race(self):
         print("I am a ", self.Race, " person")
         
-    def Country(self):
+    def country(self):
         print("I am from ", self.Country)
 
     def Hair_colour(self):
         print("My hair colour is ", self.Hair_colour)
 
     def Body_Type(self):
-        print()
+        print("Body type: ", self.Body_Type)
+        
+Human1 = Humans("Caucasian", "USA", "Black", "Pear")
+Human2 = Humans("African", "UK", "Brown", "Athletic")
+Human3 = Humans("Chinese", "China", "Black", "Slim")
 
+Human1.race()      # Will print the string "I am a Caucasian person"
+Human2.country()   # Will print the string "I am from the UK"
 
+"""Using a module (datetime in this example) with class : """
+import datetime    
 class Students:
     def __init__(self, name, last_name, bday, results, sex):
         self.name = name
@@ -139,17 +143,41 @@ class Students:
     def Last_name(self):
         print("My last name is: ", self.last_name)
         
-    def Bday(self):
+    def d(self):
         print("I was born on: ", self.bday)
         
     def Results(self):
         print("I got ", self.results, " in my test")
     
     def Sex(self): 
-        print(" I am ", self.sex)    
-        
-S1 = Students("John", "McGregor", 1980/2/1, 78, "Male" )
-S2 = Students("Tammy", "Nulty", 1950/1/1, 45, "Female" )
-S3 = Students("Darcy", "Sheffy", 1990/7/5, 89, "Female" )
+        print("I am ", self.sex)    
 
-S1.Sex()
+d1 = datetime.datetime(1980, 5, 15).strftime("%A %d %B %Y") # We create a variable to store the formatted date    
+d2 = datetime.datetime(1950,1,1).strftime("%A %d %B %Y")
+d3 = datetime.datetime(1990,7,5).strftime("%A %d %B %Y")
+
+S1 = Students("John", "McGregor", d1 , 78, "Male" )        # We use the variable instead of a description of bday
+S2 = Students("Tammy", "Nulty", d2, 45, "Female" ) 
+S3 = Students("Darcy", "Sheffy", d3, 89, "Female" )
+
+S1.d()                                                    # We call the function as usual
+S2.d()
+S2.Results()
+S3.Sex()
+
+
+
+
+
+
+
+
+
+
+
+# lst = [34, 5, 22, 31, 54, 667, 889, 0]
+# lst.sort(reverse = True)
+# print(lst)
+# lst1 = ["www", "rr" , "fdgv" ,"vdf" , "df" , "wsedf", "awsd"]
+# lst1.sort(key = len)
+# print(lst1)
